@@ -1,0 +1,423 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700&amp;family=Cairo:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Poppins:wght@600&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#fff8f2",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#f0bf5c",
+                        "primary-fixed": "#ffdea4",
+                        "on-secondary-fixed-variant": "#394d14",
+                        "surface-container": "#f6ece1",
+                        "on-secondary-fixed": "#131f00",
+                        "on-secondary-container": "#546a2e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#393838",
+                        "inverse-primary": "#f0bf5c",
+                        "secondary": "#50652a",
+                        "on-primary-fixed": "#261900",
+                        "on-surface-variant": "#4e4637",
+                        "secondary-fixed-dim": "#b6d088",
+                        "on-primary-fixed-variant": "#5d4200",
+                        "tertiary-container": "#a3a1a1",
+                        "on-surface": "#1f1b14",
+                        "surface-container-low": "#fcf2e7",
+                        "primary": "#7b5900",
+                        "surface-container-highest": "#ebe1d6",
+                        "surface-dim": "#e2d9cd",
+                        "on-primary-container": "#4b3500",
+                        "surface-tint": "#7b5900",
+                        "secondary-fixed": "#d2eca2",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#cfe99f",
+                        "outline": "#807665",
+                        "surface": "#fff8f2",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#f0e7db",
+                        "surface-variant": "#ebe1d6",
+                        "inverse-on-surface": "#f9efe4",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "primary-container": "#c89b3c",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "background": "#fff8f2",
+                        "tertiary": "#5f5e5e",
+                        "outline-variant": "#d2c5b1",
+                        "on-background": "#1f1b14",
+                        "tertiary-fixed": "#e5e2e1",
+                        "inverse-surface": "#353028"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap-mobile": "64px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "section-gap-desktop": "120px",
+                        "base": "8px",
+                        "card-padding": "32px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Alexandria"],
+                        "display-lg-mobile": ["Alexandria"],
+                        "headline-sm": ["Alexandria"],
+                        "body-lg": ["Cairo"],
+                        "headline-md": ["Alexandria"],
+                        "code-snippet": ["JetBrains Mono"],
+                        "body-md": ["Cairo"],
+                        "label-caps": ["Poppins"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "code-snippet": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    }catch(_e){}</script></head><body class="bg-background text-on-background font-body-md smooth-scroll antialiased selection:bg-primary-container selection:text-on-primary">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-xl border-b border-primary/10 shadow-sm transition-all duration-300" id="main-nav">
+<div class="flex justify-between items-center px-gutter max-w-container-max mx-auto h-20">
+<a class="font-display-lg-mobile md:font-display-lg text-primary dark:text-primary-fixed font-bold tracking-tight" href="#">
+                دكتور أحمد فايز
+            </a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md hover:opacity-90 transition-all duration-300 active:scale-95" href="#hero">الرئيسية</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:opacity-90 transition-all duration-300 active:scale-95" href="#about">عن الدكتور</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:opacity-90 transition-all duration-300 active:scale-95" href="#method">المنهج</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:opacity-90 transition-all duration-300 active:scale-95" href="#courses">الكورسات</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:opacity-90 transition-all duration-300 active:scale-95" href="#reviews">المراجعات</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:opacity-90 transition-all duration-300 active:scale-95" href="#faq">الأسئلة الشائعة</a>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2.5 rounded-full font-body-md text-body-md hover:opacity-90 transition-all duration-300 active:scale-95 hidden md:block">
+                احجز مكانك
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-section-gap-mobile md:pb-section-gap-desktop overflow-hidden min-h-[90vh] flex items-center" id="hero">
+<!-- Abstract Background Elements -->
+<div class="absolute inset-0 z-0 opacity-40 pointer-events-none" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLuJh4XOPjgUI-1OnBgSrXY2v62RamEHBp7fAUfuTimIoz0FnLTB5X54g7mBwURhl2caGy0Jz2on2JmA3byjZrIaMCggLik5vP4I_bzsmFeiv1n6G-qHpadHZ8qq55cxm-zKYNHQ7A45iGpI0X7dnLYb7sa7JKpbaG_DaZ2CcBcQMEI8BH83zd-NQ7M0TSj0o31wtIA25yl_pLeGKxGQ5CnX_vZlgFdggYUNd-15Y9dAPbKM9F9JkDu3IxQ'); background-size: cover; background-position: center; mix-blend-mode: multiply;"></div>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter grid md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-6 flex flex-col gap-6" data-aos="fade-up">
+<div class="inline-flex items-center gap-2 bg-surface-container-high text-primary px-4 py-1.5 rounded-full w-fit">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">منصة تعليمية متكاملة</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">
+                    جاهز تبدأ <span class="text-primary-container">البرمجة</span>؟
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-xl">
+                    الصفحة الرسمية للدكتور أحمد فايز لشرح منهج البرمجة وتكنولوجيا المعلومات لطلاب نظام البكالوريا بطريقة مبسطة وعملية تؤسسك صح للمستقبل.
+                </p>
+<div class="flex flex-wrap gap-4 mt-4">
+<button class="bg-primary-container text-on-primary px-8 py-3 rounded-lg font-headline-sm text-headline-sm hover:bg-primary transition-colors shadow-sm active:scale-95">
+                        ابدأ التعلم
+                    </button>
+<button class="border-2 border-secondary text-secondary px-8 py-3 rounded-lg font-headline-sm text-headline-sm hover:bg-secondary hover:text-on-secondary transition-colors active:scale-95">
+                        اعرف أكثر
+                    </button>
+</div>
+</div>
+<div class="md:col-span-6 relative">
+<div class="relative rounded-2xl overflow-hidden glass-card soft-shadow aspect-[4/5] md:aspect-auto h-[500px]">
+<img alt="دكتور أحمد فايز" class="absolute inset-0 w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd7PWt2jWAL1R3IjAzi1vtf110KWWnft3OHHZyqJdqSf6yCBieSP7gZB-xhGq_UJq1mm24xUQXW_-LaIixpFXNmiqv_D_jPLEfMQXybLdRjAIyvLEmK0oDmdauK0MV1ymIhvKRZhTCy-IU8KSIXjhPj_kgNmIsA0-EFFnXCLD1N2PwRksDk4Xsu97q4C1J8rkVz24UT0nGepq864Po2WeFLVHRmttoLwvYbiw7IP8VmUNbmgDEcTWI">
+<!-- Decorative overlay gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest/80 via-transparent to-transparent pointer-events-none"></div>
+</div>
+<!-- Floating Badge -->
+<div class="absolute -bottom-6 -left-6 glass-card px-6 py-4 rounded-xl flex items-center gap-4 soft-shadow animate-bounce" style="animation-duration: 3s;">
+<div class="bg-primary/10 p-3 rounded-full">
+<span class="material-symbols-outlined text-primary text-3xl">school</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">10+</p>
+<p class="font-body-md text-body-md text-on-surface-variant">سنوات خبرة</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- About Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-lowest" id="about">
+    <div class="max-w-container-max mx-auto px-gutter">
+        <div class="text-center mb-16">
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-4">من هو دكتور أحمد فايز؟</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">خبير في تدريس البرمجة وتكنولوجيا المعلومات بخبرة تمتد لسنوات، يقدم محتوى تعليمي متميز يجمع بين الجانب الأكاديمي والتطبيق العملي لطلاب نظام البكالوريا.</p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="bg-surface-container p-6 rounded-2xl text-center hover:-translate-y-2 transition-transform duration-300">
+                <span class="material-symbols-outlined text-4xl text-primary mb-4">lightbulb</span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">شرح مبسط</h3>
+            </div>
+            <div class="bg-surface-container p-6 rounded-2xl text-center hover:-translate-y-2 transition-transform duration-300">
+                <span class="material-symbols-outlined text-4xl text-primary mb-4">foundation</span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">تأسيس قوي</h3>
+            </div>
+            <div class="bg-surface-container p-6 rounded-2xl text-center hover:-translate-y-2 transition-transform duration-300">
+                <span class="material-symbols-outlined text-4xl text-primary mb-4">terminal</span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">تطبيق عملي</h3>
+            </div>
+            <div class="bg-surface-container p-6 rounded-2xl text-center hover:-translate-y-2 transition-transform duration-300">
+                <span class="material-symbols-outlined text-4xl text-primary mb-4">support_agent</span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">متابعة مستمرة</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface" id="why-us">
+    <div class="max-w-container-max mx-auto px-gutter">
+        <div class="text-center mb-16">
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-4">لماذا تختار منصتنا؟</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+                <span class="material-symbols-outlined text-5xl text-secondary mb-4">menu_book</span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">شرح بسيط</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">أسلوب مبسط يسهل فهم المفاهيم المعقدة.</p>
+            </div>
+             <div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+                <span class="material-symbols-outlined text-5xl text-secondary mb-4">architecture</span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">تأسيس قوي</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">بناء أساس متين لرحلتك في عالم البرمجة.</p>
+            </div>
+             <div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+                <span class="material-symbols-outlined text-5xl text-secondary mb-4">laptop_mac</span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">تطبيق عملي</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">تدريب عملي على مشاريع حقيقية.</p>
+            </div>
+             <div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+                <span class="material-symbols-outlined text-5xl text-secondary mb-4">task</span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">تدريبات</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">تمارين دورية لضمان استيعاب الدروس.</p>
+            </div>
+             <div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+                <span class="material-symbols-outlined text-5xl text-secondary mb-4">groups</span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">متابعة</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">دعم مستمر وإجابة على كافة الاستفسارات.</p>
+            </div>
+             <div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center hover:scale-105 transition-transform duration-300">
+                <span class="material-symbols-outlined text-5xl text-secondary mb-4">workspace_premium</span>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">استعداد للامتحانات</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">مراجعات مكثفة تضمن لك التفوق.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Courses Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-lowest" id="courses">
+    <div class="max-w-container-max mx-auto px-gutter">
+        <div class="text-center mb-16">
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-4">الكورسات المتاحة</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-surface-container rounded-2xl overflow-hidden soft-shadow flex flex-col">
+                <div class="h-48 bg-primary/20 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-6xl text-primary">code</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">برمجة أولى ثانوي</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-4">كورس تأسيسي في مبادئ البرمجة.</p>
+                    <div class="mt-auto">
+                        <button class="w-full bg-primary-container text-on-primary py-2 rounded-lg font-body-md font-bold hover:bg-primary transition-colors">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-surface-container rounded-2xl overflow-hidden soft-shadow flex flex-col">
+                <div class="h-48 bg-primary/20 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-6xl text-primary">developer_mode</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">برمجة تانية ثانوي</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-4">مستوى متقدم يغطي مفاهيم أعمق.</p>
+                    <div class="mt-auto">
+                        <button class="w-full bg-primary-container text-on-primary py-2 rounded-lg font-body-md font-bold hover:bg-primary transition-colors">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-surface-container rounded-2xl overflow-hidden soft-shadow flex flex-col">
+                <div class="h-48 bg-primary/20 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-6xl text-primary">computer</span>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">تكنولوجيا المعلومات</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-4">شرح شامل لمنهج تكنولوجيا المعلومات.</p>
+                    <div class="mt-auto">
+                        <button class="w-full bg-primary-container text-on-primary py-2 rounded-lg font-body-md font-bold hover:bg-primary transition-colors">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Learning Method -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface" id="method">
+    <div class="max-w-container-max mx-auto px-gutter text-center">
+        <h2 class="font-headline-md text-headline-md text-on-surface mb-12">منهجيتنا في التعلم</h2>
+        <div class="flex flex-col md:flex-row justify-between items-center relative">
+            <div class="absolute top-1/2 left-0 right-0 h-1 bg-primary/20 -z-10 hidden md:block transform -translate-y-1/2"></div>
+            <div class="flex flex-col items-center mb-8 md:mb-0">
+                <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xl mb-4 z-10">1</div>
+                <p class="font-body-md text-body-md font-bold">ابدأ من الصفر</p>
+            </div>
+            <div class="flex flex-col items-center mb-8 md:mb-0">
+                <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xl mb-4 z-10">2</div>
+                <p class="font-body-md text-body-md font-bold">افهم الأساسيات</p>
+            </div>
+            <div class="flex flex-col items-center mb-8 md:mb-0">
+                <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xl mb-4 z-10">3</div>
+                <p class="font-body-md text-body-md font-bold">طبق عملياً</p>
+            </div>
+            <div class="flex flex-col items-center mb-8 md:mb-0">
+                <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xl mb-4 z-10">4</div>
+                <p class="font-body-md text-body-md font-bold">حل التدريبات</p>
+            </div>
+            <div class="flex flex-col items-center mb-8 md:mb-0">
+                <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xl mb-4 z-10">5</div>
+                <p class="font-body-md text-body-md font-bold">راجع مستواك</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xl mb-4 z-10">6</div>
+                <p class="font-body-md text-body-md font-bold">ادخل الامتحان بثقة</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quote Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-high relative overflow-hidden">
+    <div class="absolute -top-10 -right-10 text-[15rem] text-primary/10 font-serif leading-none select-none">"</div>
+    <div class="max-w-4xl mx-auto px-gutter text-center relative z-10">
+        <p class="font-display-lg-mobile md:font-display-lg text-primary text-2xl md:text-4xl leading-relaxed">
+            البرمجة مش مادة تحفظها... البرمجة مهارة تفهمها وتطبقها وتبني بيها مستقبلك.
+        </p>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface" id="reviews">
+    <div class="max-w-container-max mx-auto px-gutter">
+        <h2 class="font-headline-md text-headline-md text-center text-on-surface mb-12">آراء طلابنا</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/30">
+                <div class="flex text-primary mb-4">
+                    <span class="material-symbols-outlined">star</span>
+                    <span class="material-symbols-outlined">star</span>
+                    <span class="material-symbols-outlined">star</span>
+                    <span class="material-symbols-outlined">star</span>
+                    <span class="material-symbols-outlined">star</span>
+                </div>
+                <p class="font-body-md text-on-surface-variant mb-6">"شرح الدكتور ممتاز جداً، خلاني أحب البرمجة وأفهمها بسهولة."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold">م</div>
+                    <div>
+                        <p class="font-bold text-on-surface">محمد علي</p>
+                        <p class="text-sm text-on-surface-variant">طالب بالصف الأول الثانوي</p>
+                    </div>
+                </div>
+            </div>
+            <!-- More reviews could go here -->
+             <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/30">
+                <div class="flex text-primary mb-4">
+                    <span class="material-symbols-outlined">star</span>
+                    <span class="material-symbols-outlined">star</span>
+                    <span class="material-symbols-outlined">star</span>
+                    <span class="material-symbols-outlined">star</span>
+                    <span class="material-symbols-outlined">star</span>
+                </div>
+                <p class="font-body-md text-on-surface-variant mb-6">"طريقة الشرح عملية جداً، والتطبيق بيخلي المعلومة تثبت."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold">أ</div>
+                    <div>
+                        <p class="font-bold text-on-surface">أحمد حسن</p>
+                        <p class="text-sm text-on-surface-variant">طالب بالصف الثاني الثانوي</p>
+                    </div>
+                </div>
+            </div>
+             <div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/30">
+                <div class="flex text-primary mb-4">
+                    <span class="material-symbols-outlined">star</span>
+                    <span class="material-symbols-outlined">star</span>
+                    <span class="material-symbols-outlined">star</span>
+                    <span class="material-symbols-outlined">star</span>
+                    <span class="material-symbols-outlined">star_half</span>
+                </div>
+                <p class="font-body-md text-on-surface-variant mb-6">"المتابعة المستمرة هي اللي بتفرق، شكراً دكتور أحمد."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold">س</div>
+                    <div>
+                        <p class="font-bold text-on-surface">سارة محمود</p>
+                        <p class="text-sm text-on-surface-variant">طالبة بالصف الأول الثانوي</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-lowest" id="faq">
+    <div class="max-w-3xl mx-auto px-gutter">
+        <h2 class="font-headline-md text-headline-md text-center text-on-surface mb-12">الأسئلة الشائعة</h2>
+        <div class="space-y-4">
+            <details class="bg-surface p-6 rounded-xl group cursor-pointer border border-outline-variant/30">
+                <summary class="font-headline-sm text-headline-sm text-on-surface flex justify-between items-center font-semibold">
+                    كيف أستطيع التسجيل في الكورسات؟
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                </summary>
+                <p class="mt-4 text-on-surface-variant font-body-md text-body-md">يمكنك التسجيل من خلال الضغط على زر "احجز مكانك" واتباع الخطوات البسيطة لإتمام عملية الدفع والتسجيل.</p>
+            </details>
+            <details class="bg-surface p-6 rounded-xl group cursor-pointer border border-outline-variant/30">
+                <summary class="font-headline-sm text-headline-sm text-on-surface flex justify-between items-center font-semibold">
+                    هل الكورسات مناسبة للمبتدئين؟
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                </summary>
+                <p class="mt-4 text-on-surface-variant font-body-md text-body-md">نعم، الكورسات مصممة لتبدأ معك من الصفر وتتدرج بك حتى الاحتراف.</p>
+            </details>
+             <details class="bg-surface p-6 rounded-xl group cursor-pointer border border-outline-variant/30">
+                <summary class="font-headline-sm text-headline-sm text-on-surface flex justify-between items-center font-semibold">
+                    كيف يتم التواصل في حال وجود أسئلة؟
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                </summary>
+                <p class="mt-4 text-on-surface-variant font-body-md text-body-md">نوفر منصات تواصل مخصصة للطلاب لطرح الأسئلة ومناقشة التحديات، مع وجود متابعة مستمرة.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-surface-container-high py-12 border-t border-outline-variant/30">
+    <div class="max-w-container-max mx-auto px-gutter grid md:grid-cols-4 gap-8 mb-8">
+        <div class="md:col-span-2">
+            <a class="font-display-lg-mobile text-primary font-bold tracking-tight mb-4 inline-block" href="#">دكتور أحمد فايز</a>
+            <p class="text-on-surface-variant font-body-md max-w-sm">منصتك الأولى لتعلم البرمجة وتكنولوجيا المعلومات بطريقة عصرية ومبسطة.</p>
+        </div>
+        <div>
+            <h4 class="font-bold text-on-surface mb-4">روابط سريعة</h4>
+            <ul class="space-y-2">
+                <li class=""><a href="#about" class="text-on-surface-variant hover:text-primary transition-colors">عن الدكتور</a></li>
+                <li class=""><a href="#courses" class="text-on-surface-variant hover:text-primary transition-colors">الكورسات</a></li>
+                <li class=""><a href="#faq" class="text-on-surface-variant hover:text-primary transition-colors">الأسئلة الشائعة</a></li></ul></div></div></footer></body></html>

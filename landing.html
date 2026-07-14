@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دكتور البرمجة | بكالوريا مصرية — أولى وتانية ثانوي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@300;400;500;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#0A1428;
+    --navy-800:#0F1F3D;
+    --navy-700:#172C55;
+    --navy-600:#213B72;
+    --orange-600:#FF5A1F;
+    --orange-500:#FF7A3D;
+    --orange-400:#FF9A5C;
+    --amber-300:#FFC66D;
+    --cream:#FFF7EE;
+    --cream-100:#FFFBF6;
+    --ink-900:#101827;
+    --muted-600:#5C6B8A;
+    --muted-400:#8593AC;
+    --line-dark:rgba(255,255,255,0.09);
+    --line-light:rgba(16,24,39,0.08);
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Tajawal',sans-serif;
+    background:var(--cream);
+    color:var(--ink-900);
+    line-height:1.75;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    letter-spacing:.5px;
+    color:var(--orange-500);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:14px;
+    direction:ltr;
+    unicode-bidi:plaintext;
+  }
+  .eyebrow::before{content:"//";opacity:.6;}
+  h1,h2,h3{font-family:'Lalezar',cursive;font-weight:400;letter-spacing:.3px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 30px;border-radius:100px;font-weight:700;font-size:16px;
+    cursor:pointer;border:none;transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    font-family:'Tajawal',sans-serif;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--orange-500),var(--orange-600));color:#fff;box-shadow:0 10px 30px -8px rgba(255,90,31,.6);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 34px -8px rgba(255,90,31,.75);}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid var(--line-dark);}
+  .btn-ghost:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.25);}
+  .btn-dark{background:var(--navy-950);color:#fff;}
+  .btn-dark:hover{transform:translateY(-2px);}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(10,20,40,.72);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line-dark);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;color:#fff;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;}
+  .logo-mark{
+    width:38px;height:38px;border-radius:10px;
+    background:linear-gradient(135deg,var(--orange-500),var(--amber-300));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--navy-950);font-size:15px;
+    direction:ltr;
+  }
+  .nav-links{display:flex;gap:32px;font-size:15px;color:#cfd7ea;}
+  .nav-links a{transition:color .2s;}
+  .nav-links a:hover{color:var(--orange-400);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
+  .burger span{width:24px;height:2px;background:#fff;display:block;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:
+      radial-gradient(ellipse 900px 500px at 85% -10%, rgba(255,122,61,.25), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 0% 100%, rgba(255,198,109,.10), transparent 60%),
+      linear-gradient(160deg,var(--navy-950), var(--navy-800) 60%, var(--navy-700));
+    color:#fff;
+    padding:64px 0 90px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 700px 500px at 80% 10%, black, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:2;}
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.06);border:1px solid var(--line-dark);
+    padding:8px 16px;border-radius:100px;font-size:13px;color:var(--amber-300);
+    margin-bottom:20px;font-weight:700;
+  }
+  .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--orange-500);box-shadow:0 0 0 4px rgba(255,90,31,.25);animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .hero h1{font-size:clamp(38px,5.4vw,58px);line-height:1.25;margin-bottom:22px;}
+  .hero h1 .hl{color:var(--orange-500);}
+  .hero p.lead{font-size:18px;color:#cfd7ea;max-width:540px;margin-bottom:32px;}
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:46px;}
+  .hero-stats{display:flex;gap:0;border-top:1px solid var(--line-dark);padding-top:26px;}
+  .stat{flex:1;padding-inline-end:20px;}
+  .stat b{font-family:'JetBrains Mono',monospace;font-size:26px;color:#fff;display:block;direction:ltr;text-align:right;}
+  .stat span{font-size:13px;color:var(--muted-400);}
+
+  /* code window */
+  .stage{position:relative;}
+  .editor{
+    background:#0D1526;border:1px solid var(--line-dark);border-radius:16px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.6);
+    overflow:hidden;
+    direction:ltr;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .editor-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#0A0F1E;border-bottom:1px solid var(--line-dark);}
+  .editor-bar .dot2{width:11px;height:11px;border-radius:50%;}
+  .editor-bar .d1{background:#FF5F56;}.editor-bar .d2{background:#FFBD2E;}.editor-bar .d3{background:#27C93F;}
+  .editor-tab{margin-inline-start:14px;font-size:12px;color:#9fb0d1;background:#111D38;padding:6px 12px;border-radius:8px 8px 0 0;}
+  .editor-body{padding:20px 18px;font-size:13.5px;line-height:1.9;color:#8fa3c9;min-height:190px;}
+  .editor-body .ln{color:#3d4d6e;user-select:none;display:inline-block;width:20px;}
+  .tok-key{color:#FF9A5C;}.tok-str{color:#9EE6A0;}.tok-fn{color:#7EC8FF;}.tok-com{color:#5b6f95;}.tok-var{color:#e8ecf5;}
+  #typed{color:#9EE6A0;}
+  .caret{display:inline-block;width:8px;height:16px;background:var(--orange-500);vertical-align:middle;animation:blink 1s step-end infinite;}
+  @keyframes blink{50%{opacity:0}}
+
+  .photo-card{
+    position:absolute;left:-38px;bottom:-42px;width:180px;
+    background:#fff;padding:10px 10px 34px;border-radius:10px;
+    box-shadow:0 25px 45px -15px rgba(0,0,0,.5);
+    transform:rotate(-6deg);
+    direction:rtl;
+  }
+  .photo-card .frame{
+    width:100%;aspect-ratio:1/1;border-radius:4px;overflow:hidden;
+    background:linear-gradient(135deg,var(--navy-700),var(--navy-950));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .photo-card .frame .initials{font-family:'Lalezar',cursive;font-size:44px;color:var(--orange-400);}
+  .photo-card p{font-family:'JetBrains Mono',monospace;font-size:11px;color:#666;text-align:center;margin-top:10px;direction:ltr;}
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:96px 0;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,40px);color:var(--navy-950);line-height:1.35;}
+  .section-head p{color:var(--muted-600);font-size:16.5px;margin-top:14px;}
+  .center{text-align:center;margin-inline:auto;}
+
+  /* ---------- NEW SYSTEM ---------- */
+  .sys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .sys-card{
+    background:var(--cream-100);border:1px solid var(--line-light);
+    border-radius:var(--radius);padding:30px 26px;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .sys-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -18px rgba(16,24,39,.18);border-color:transparent;}
+  .sys-card .ico{
+    width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--orange-500),var(--amber-300));margin-bottom:18px;
+    font-family:'JetBrains Mono',monospace;color:#fff;font-weight:700;font-size:18px;
+  }
+  .sys-card h3{font-family:'Tajawal',sans-serif;font-weight:800;font-size:19px;margin-bottom:10px;}
+  .sys-card p{color:var(--muted-600);font-size:15px;}
+
+  /* ---------- ABOUT ME ---------- */
+  .about{background:var(--navy-950);color:#fff;position:relative;overflow:hidden;}
+  .about::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse 600px 400px at 90% 20%, rgba(255,122,61,.18), transparent 65%);
+  }
+  .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center;position:relative;z-index:2;}
+  .about-photo{
+    aspect-ratio:4/5;border-radius:20px;overflow:hidden;
+    background:linear-gradient(150deg,var(--navy-700),var(--navy-950));
+    border:1px solid var(--line-dark);
+    display:flex;align-items:center;justify-content:center;position:relative;
+  }
+  .about-photo .initials{font-family:'Lalezar',cursive;font-size:110px;color:var(--orange-500);opacity:.85;}
+  .about-photo .tag{
+    position:absolute;bottom:16px;right:16px;left:16px;
+    background:rgba(10,20,40,.7);backdrop-filter:blur(6px);
+    border:1px solid var(--line-dark);border-radius:10px;padding:10px 14px;
+    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber-300);direction:ltr;text-align:center;
+  }
+  .about h2{color:#fff;font-size:clamp(26px,3.4vw,36px);margin-bottom:20px;}
+  .about p{color:#b9c4dd;font-size:16px;margin-bottom:16px;}
+  .about-badges{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+  .badge{
+    font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#fff;
+    background:rgba(255,255,255,.06);border:1px solid var(--line-dark);
+    padding:9px 15px;border-radius:100px;direction:ltr;
+  }
+  .badge b{color:var(--orange-400);}
+
+  /* ---------- GRADES ---------- */
+  .grades-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .grade-card{
+    border-radius:22px;padding:38px 32px;position:relative;overflow:hidden;
+    border:1px solid var(--line-light);
+  }
+  .grade-card.g1{background:var(--cream-100);}
+  .grade-card.g2{background:var(--navy-950);color:#fff;}
+  .grade-card.g2 p, .grade-card.g2 li{color:#b9c4dd;}
+  .grade-tag{
+    font-family:'JetBrains Mono',monospace;font-size:12px;
+    background:linear-gradient(135deg,var(--orange-500),var(--amber-300));
+    color:#fff;padding:6px 14px;border-radius:100px;display:inline-block;margin-bottom:18px;font-weight:700;
+  }
+  .grade-card h3{font-size:26px;font-family:'Lalezar',cursive;margin-bottom:12px;}
+  .grade-card ul{list-style:none;margin:22px 0 26px;}
+  .grade-card li{padding-inline-start:26px;position:relative;margin-bottom:12px;font-size:15px;}
+  .grade-card li::before{
+    content:"›";position:absolute;right:0;color:var(--orange-500);font-weight:800;font-size:18px;
+  }
+
+  /* ---------- FEATURES ---------- */
+  .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .feat{padding:26px 22px;border-radius:16px;background:var(--cream-100);border:1px solid var(--line-light);}
+  .feat .n{font-family:'JetBrains Mono',monospace;color:var(--orange-500);font-size:13px;margin-bottom:10px;direction:ltr;}
+  .feat h3{font-family:'Tajawal',sans-serif;font-weight:800;font-size:17px;margin-bottom:8px;}
+  .feat p{color:var(--muted-600);font-size:14px;}
+
+  /* ---------- BOOKING ---------- */
+  .booking{
+    background:linear-gradient(160deg,var(--navy-800),var(--navy-950));
+    color:#fff;position:relative;overflow:hidden;
+  }
+  .booking::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 700px 450px at 10% 10%, rgba(255,122,61,.2), transparent 60%);}
+  .book-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;position:relative;z-index:2;align-items:start;}
+  .book-grid h2{color:#fff;font-size:clamp(26px,3.4vw,36px);margin-bottom:18px;}
+  .book-grid > div > p{color:#b9c4dd;margin-bottom:24px;font-size:16px;}
+  .book-steps{display:flex;flex-direction:column;gap:16px;}
+  .book-step{display:flex;gap:14px;align-items:flex-start;}
+  .book-step .num{
+    font-family:'JetBrains Mono',monospace;color:var(--orange-500);font-weight:700;font-size:14px;
+    background:rgba(255,90,31,.12);border:1px solid rgba(255,90,31,.3);
+    width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .book-step p{color:#cfd7ea;font-size:14.5px;}
+
+  form.book-form{
+    background:#fff;color:var(--ink-900);border-radius:20px;padding:34px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
+  }
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:13.5px;font-weight:700;margin-bottom:8px;color:var(--navy-950);}
+  .field input, .field select{
+    width:100%;padding:13px 14px;border-radius:10px;border:1.5px solid #e6e2da;
+    font-family:'Tajawal',sans-serif;font-size:15px;background:var(--cream-100);
+    transition:border-color .2s;
+  }
+  .field input:focus, .field select:focus{outline:none;border-color:var(--orange-500);}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .book-form .btn-primary{width:100%;margin-top:6px;}
+  .form-note{font-size:12.5px;color:var(--muted-600);text-align:center;margin-top:14px;}
+  .success{display:none;text-align:center;padding:20px 0;}
+  .success.show{display:block;}
+  .success .check{
+    width:58px;height:58px;border-radius:50%;background:var(--orange-500);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:26px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy-950);color:#8fa0c4;padding:56px 0 28px;}
+  .foot-grid{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:30px;padding-bottom:36px;border-bottom:1px solid var(--line-dark);}
+  .foot-links{display:flex;gap:40px;flex-wrap:wrap;}
+  .foot-col h4{font-size:13px;color:#fff;margin-bottom:14px;font-family:'JetBrains Mono',monospace;}
+  .foot-col a{display:block;font-size:14px;margin-bottom:10px;color:#8fa0c4;transition:color .2s;}
+  .foot-col a:hover{color:var(--orange-400);}
+  .foot-bottom{display:flex;justify-content:space-between;padding-top:22px;font-size:13px;flex-wrap:wrap;gap:10px;direction:ltr;text-align:right;}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.show{opacity:1;transform:translateY(0);}
+
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .stage{order:-1;margin-bottom:20px;}
+    .photo-card{left:16px;bottom:-30px;width:130px;}
+    .sys-grid{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .grades-grid{grid-template-columns:1fr;}
+    .feat-grid{grid-template-columns:1fr 1fr;}
+    .book-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    .burger{display:flex;}
+    .field-row{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .feat-grid{grid-template-columns:1fr;}
+    .hero-stats{flex-wrap:wrap;gap:20px;}
+    .stat{flex:1 1 40%;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="logo"><span class="logo-mark">&lt;/&gt;</span> د. البرمجة</div>
+    <nav class="nav-links">
+      <a href="#home">الرئيسية</a>
+      <a href="#system">النظام الجديد</a>
+      <a href="#about">عني</a>
+      <a href="#grades">المراحل</a>
+      <a href="#features">مميزات المنهج</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#booking" class="btn btn-primary" style="padding:11px 22px;font-size:14px;">احجز مكانك</a>
+      <button class="burger" aria-label="فتح القائمة"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-badge"><span class="dot"></span> متاح الآن لأولى وتانية ثانوي — بكالوريا مصرية</div>
+      <h1>البرمجة مش مادة بتتحفظ… <span class="hl">دماغ بتتبني</span></h1>
+      <p class="lead">معاك خطوة بخطوة في مادة البرمجة وعلوم الحاسب على نظام البكالوريا المصرية الجديد، من أول سطر كود لحد الامتحان، بأسلوب بسيط وتطبيق عملي حقيقي.</p>
+      <div class="hero-ctas">
+        <a href="#booking" class="btn btn-primary">احجز حصة تجريبية مجانية</a>
+        <a href="#system" class="btn btn-ghost">اعرف تفاصيل النظام الجديد</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>2</b><span>مراحل متاحة: أولى وتانية ثانوي</span></div>
+        <div class="stat"><b>100%</b><span>مسايرة لمنهج البكالوريا الجديد</span></div>
+        <div class="stat"><b>&lt;1:1&gt;</b><span>متابعة فردية لكل طالب</span></div>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="editor">
+        <div class="editor-bar">
+          <span class="dot2 d1"></span><span class="dot2 d2"></span><span class="dot2 d3"></span>
+          <span class="editor-tab">about_me.js</span>
+        </div>
+        <div class="editor-body">
+<div><span class="ln">1</span><span class="tok-key">const</span> <span class="tok-var">teacher</span> = {</div>
+<div><span class="ln">2</span>&nbsp;&nbsp;name: <span class="tok-str">"[اكتب اسمك هنا]"</span>,</div>
+<div><span class="ln">3</span>&nbsp;&nbsp;title: <span class="tok-str">"دكتور البرمجة"</span>,</div>
+<div><span class="ln">4</span>&nbsp;&nbsp;system: <span class="tok-str">"البكالوريا المصرية الجديد"</span>,</div>
+<div><span class="ln">5</span>&nbsp;&nbsp;subjects: [<span class="tok-str">"البرمجة"</span>, <span class="tok-str">"علوم الحاسب"</span>],</div>
+<div><span class="ln">6</span>&nbsp;&nbsp;grades: [<span class="tok-str">"أولى ثانوي"</span>, <span class="tok-str">"تانية ثانوي"</span>],</div>
+<div><span class="ln">7</span>&nbsp;&nbsp;mission: <span class="tok-fn">welcome</span>()</div>
+<div><span class="ln">8</span>};</div>
+<div><span class="ln">9</span><span class="tok-com">// <span id="typed"></span><span class="caret"></span></span></div>
+        </div>
+      </div>
+      <div class="photo-card">
+        <div class="frame"><span class="initials">?</span></div>
+        <p>// ضيف صورتك هنا</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="system">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">why-its-different</div>
+      <h2>نظام البكالوريا لسه جديد… وأول سنة هي الأهم</h2>
+      <p>وزارة التربية والتعليم بدأت تطبيق نظام البكالوريا المصرية، وطلاب أولى وتانية ثانوي دلوقتي هما أول دفعة بتخوض التجربة دي. مادة البرمجة وعلوم الحاسب بقت جزء أساسي من مسار الهندسة والحاسبات، وده بيخلي فهمها صح من البداية حاجة تفرق.</p>
+    </div>
+    <div class="sys-grid">
+      <div class="sys-card reveal">
+        <div class="ico">A1</div>
+        <h3>مرحلة تمهيدية واعية</h3>
+        <p>أولى ثانوي هي الأساس اللي بيتبني عليه اختيار مسارك، فبنركز على فهم منطق البرمجة قبل قواعدها.</p>
+      </div>
+      <div class="sys-card reveal">
+        <div class="ico">A2</div>
+        <h3>تقييم مستمر</h3>
+        <p>النظام الجديد بيعتمد على تقييمات ومتابعة على مدار الفصل مش امتحان واحد بس، فالمذاكرة أول بأول بقت ضرورة مش رفاهية.</p>
+      </div>
+      <div class="sys-card reveal">
+        <div class="ico">A3</div>
+        <h3>فهم مش حفظ</h3>
+        <p>التوجه العام للنظام الجديد إنه يقيس فهمك وتطبيقك للكود مش مجرد حفظ الأكواد، وده بالظبط أسلوبي في الشرح.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="about-photo">
+        <span class="initials">؟</span>
+        <div class="tag">// profile.jpg — ضيف صورتك الحقيقية هنا</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">who-am-i</div>
+      <h2>أنا مين، وليه أذاكر معايا؟</h2>
+      <p>[هنا هتحط تعريف مختصر عن نفسك: اسمك، مؤهلك الدراسي، وسنين خبرتك في تدريس البرمجة وعلوم الحاسب]. بشتغل مع طلاب أولى وتانية ثانوي على منهج البكالوريا المصرية الجديد، وهدفي إني أوصلك المعلومة ببساطة وتطبيق عملي بدل الحفظ الجاف.</p>
+      <p>مش بس بشرح المنهج… بعلّمك تفكر زي مبرمج: تحلل المشكلة، تكتب الكود، وتفهم غلطك بنفسك.</p>
+      <div class="about-badges">
+        <span class="badge"><b>+X</b> سنة خبرة</span>
+        <span class="badge"><b>+X</b> طالب اتعلم معايا</span>
+        <span class="badge">مؤهل: [مؤهلك الدراسي]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="grades">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">available-grades</div>
+      <h2>المراحل المتاحة دلوقتي</h2>
+      <p>خطة مذاكرة مختلفة لكل مرحلة، على حسب متطلبات نظام البكالوريا الجديد.</p>
+    </div>
+    <div class="grades-grid">
+      <div class="grade-card g1 reveal">
+        <span class="grade-tag">أولى ثانوي</span>
+        <h3>مرحلة التأسيس</h3>
+        <p>بناء أساس قوي في منطق البرمجة قبل الدخول في التخصص.</p>
+        <ul>
+          <li>أساسيات التفكير المنطقي والخوارزميات</li>
+          <li>مبادئ البرمجة من الصفر</li>
+          <li>تجهيز كامل لاختيار مسار الهندسة والحاسبات</li>
+          <li>متابعة أول بأول مع كل تقييم شهري</li>
+        </ul>
+        <a href="#booking" class="btn btn-dark" style="width:100%;">احجز مكان أولى ثانوي</a>
+      </div>
+      <div class="grade-card g2 reveal">
+        <span class="grade-tag">تانية ثانوي</span>
+        <h3>مرحلة التخصص</h3>
+        <p>الدخول الفعلي في مادة البرمجة وعلوم الحاسب كمادة أساسية بالمسار.</p>
+        <ul>
+          <li>شرح المنهج بالكامل خطوة بخطوة</li>
+          <li>حل تطبيقات وأسئلة امتحانية حقيقية</li>
+          <li>مراجعات مكثفة قبل كل تقييم</li>
+          <li>تجهيز كامل لسنة تالتة ثانوي</li>
+        </ul>
+        <a href="#booking" class="btn btn-primary" style="width:100%;">احجز مكان تانية ثانوي</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">how-i-teach</div>
+      <h2>أسلوب المذاكرة معايا</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat reveal">
+        <div class="n">01_مجموعات</div>
+        <h3>مجموعات صغيرة</h3>
+        <p>عدد محدود في كل مجموعة عشان المتابعة تبقى حقيقية مش شكلية.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="n">02_تطبيق</div>
+        <h3>كود حقيقي مش نظري بس</h3>
+        <p>كل درس بينتهي بتطبيق عملي يثبت المعلومة في دماغك.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="n">03_متابعة</div>
+        <h3>تقارير لولي الأمر</h3>
+        <p>تحديث دوري عن مستوى الطالب ونقاط التحسين.</p>
+      </div>
+      <div class="feat reveal">
+        <div class="n">04_مراجعة</div>
+        <h3>بنك أسئلة وتقييمات</h3>
+        <p>تدريب مستمر على نمط الأسئلة المتوقعة في النظام الجديد.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <div class="wrap book-grid">
+    <div class="reveal">
+      <div class="eyebrow">reserve-your-seat</div>
+      <h2>احجز مكانك دلوقتي</h2>
+      <p>الأماكن في كل مجموعة محدودة عشان المتابعة تفضل شخصية. املأ بياناتك وهتوصلك رسالة تأكيد على واتساب فورًا.</p>
+      <div class="book-steps">
+        <div class="book-step"><span class="num">1</span><p>املأ الفورم بجانب كده ببياناتك وبيانات الطالب</p></div>
+        <div class="book-step"><span class="num">2</span><p>هيتفتحلك واتساب برسالة جاهزة تأكد بيها الحجز</p></div>
+        <div class="book-step"><span class="num">3</span><p>هنرد عليك بسرعة نحدد ميعاد الحصة التجريبية</p></div>
+      </div>
+    </div>
+
+    <form class="book-form reveal" id="bookForm">
+      <div id="formFields">
+        <div class="field">
+          <label>اسم الطالب</label>
+          <input type="text" id="stName" placeholder="اكتب اسمك بالكامل" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>الصف الدراسي</label>
+            <select id="stGrade" required>
+              <option value="">اختر الصف</option>
+              <option value="أولى ثانوي">أولى ثانوي</option>
+              <option value="تانية ثانوي">تانية ثانوي</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>رقم الموبايل</label>
+            <input type="tel" id="stPhone" placeholder="01xxxxxxxxx" required>
+          </div>
+        </div>
+        <div class="field">
+          <label>ميعاد التواصل المفضل</label>
+          <select id="stTime">
+            <option value="أي وقت">أي وقت مناسب</option>
+            <option value="الصبح">الصبح</option>
+            <option value="بعد الضهر">بعد الضهر</option>
+            <option value="بالليل">بالليل</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">تأكيد الحجز عبر واتساب</button>
+        <p class="form-note">هيتم تحويلك لواتساب مباشرة برسالة جاهزة ببياناتك</p>
+      </div>
+      <div class="success" id="successBox">
+        <div class="check">✓</div>
+        <h3 style="font-family:'Tajawal',sans-serif;font-weight:800;font-size:19px;margin-bottom:8px;">تم تجهيز طلبك!</h3>
+        <p style="color:var(--muted-600);font-size:14.5px;">هيفتحلك واتساب دلوقتي لتأكيد الحجز.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="color:#fff;margin-bottom:14px;"><span class="logo-mark">&lt;/&gt;</span> د. البرمجة</div>
+        <p style="max-width:280px;font-size:14px;color:#8fa0c4;">مذاكرة البرمجة وعلوم الحاسب لنظام البكالوريا المصرية الجديد — أولى وتانية ثانوي.</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>الصفحة</h4>
+          <a href="#system">النظام الجديد</a>
+          <a href="#about">عني</a>
+          <a href="#grades">المراحل</a>
+        </div>
+        <div class="foot-col">
+          <h4>تواصل</h4>
+          <a href="#booking">احجز مكانك</a>
+          <a href="tel:+2000000000">اتصل بنا</a>
+          <a href="https://wa.me/2000000000" target="_blank" rel="noopener">واتساب</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 دكتور البرمجة — جميع الحقوق محفوظة</span>
+      <span>Made for Egypt's New Bakalureya</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const burger = document.querySelector('.burger');
+  const navLinks = document.querySelector('.nav-links');
+  burger.addEventListener('click', () => {
+    const isOpen = navLinks.style.display === 'flex';
+    navLinks.style.display = isOpen ? 'none' : 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.position='absolute';
+    navLinks.style.top='64px';
+    navLinks.style.right='0';
+    navLinks.style.left='0';
+    navLinks.style.background='rgba(10,20,40,.97)';
+    navLinks.style.padding='20px 24px';
+    navLinks.style.gap='18px';
+  });
+
+  // typing animation
+  const phrases = [
+    "متاح الآن لأولى وتانية ثانوي",
+    "بكالوريا مصرية جديدة… وأنا معاك خطوة بخطوة",
+    "احجز حصتك التجريبية دلوقتي"
+  ];
+  const typedEl = document.getElementById('typed');
+  let pIndex = 0, cIndex = 0, deleting = false;
+  function typeLoop(){
+    const current = phrases[pIndex];
+    if(!deleting){
+      cIndex++;
+      typedEl.textContent = current.slice(0, cIndex);
+      if(cIndex === current.length){ deleting = true; setTimeout(typeLoop, 1600); return; }
+    } else {
+      cIndex--;
+      typedEl.textContent = current.slice(0, cIndex);
+      if(cIndex === 0){ deleting = false; pIndex = (pIndex+1) % phrases.length; }
+    }
+    setTimeout(typeLoop, deleting ? 30 : 55);
+  }
+  typeLoop();
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, {threshold:.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  // booking form -> whatsapp
+  const form = document.getElementById('bookForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('stName').value.trim();
+    const grade = document.getElementById('stGrade').value;
+    const phone = document.getElementById('stPhone').value.trim();
+    const time = document.getElementById('stTime').value;
+    const waNumber = "2000000000"; // TODO: استبدل برقم واتساب المدرس (بصيغة دولية بدون +)
+    const msg = encodeURIComponent(
+      `مرحباً، أنا ${name}\nالصف الدراسي: ${grade}\nرقم الموبايل: ${phone}\nالوقت المفضل للتواصل: ${time}\nأرغب في حجز حصة تجريبية في مادة البرمجة.`
+    );
+    document.getElementById('formFields').style.display = 'none';
+    document.getElementById('successBox').classList.add('show');
+    setTimeout(()=>{ window.open(`https://wa.me/${waNumber}?text=${msg}`, '_blank'); }, 900);
+  });
+</script>
+
+</body>
+</html>
