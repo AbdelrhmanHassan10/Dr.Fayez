@@ -1573,6 +1573,25 @@ img { max-width: 100%; height: auto; display: block; }
         font-size: 12px;
     }
 }
+
+.standalone-editor {
+    position: relative;
+    bottom: auto !important;
+    right: auto !important;
+    left: auto !important;
+    margin: 4rem auto 2rem;
+    width: 100% !important;
+    max-width: 600px;
+    font-size: 16px !important;
+    transform: none;
+    z-index: 10;
+}
+@media (max-width: 768px) {
+    .standalone-editor {
+        font-size: 14px !important;
+        margin-top: 3rem;
+    }
+}
 .editor-bar {
     background: var(--editor-bar);
     padding: 10px 15px;
